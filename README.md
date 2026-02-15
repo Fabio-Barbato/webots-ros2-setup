@@ -43,7 +43,7 @@ Communication happens via JSON files in a shared folder, enabling:
 
 ```bash
 cd ~
-git clone https://github.com/YOUR_USERNAME/webots-ros2-setup.git
+git clone https://github.com/Fabio-Barbato/webots-ros2-setup.git
 cd webots-ros2-setup
 ```
 
