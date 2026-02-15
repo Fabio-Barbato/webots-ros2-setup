@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🐳 Starting ROS2 Container..."
+echo "Starting ROS2 Container..."
 echo ""
 
 # Detect architecture
@@ -10,7 +10,7 @@ if [ "$ARCH" = "arm64" ]; then
 elif [ "$ARCH" = "x86_64" ]; then
     PLATFORM="linux/amd64"
 else
-    echo "❌ Unknown architecture: $ARCH"
+    echo "Unknown architecture: $ARCH"
     exit 1
 fi
 
@@ -26,7 +26,7 @@ mkdir -p "$BRIDGE_DIR"
 
 # Check if container exists
 if [ "$(docker ps -aq -f name=ros2_webots)" ]; then
-    echo "⚠️  Container 'ros2_webots' already exists"
+    echo "Container 'ros2_webots' already exists"
     read -p "Start existing container? (y/n) " -n 1 -r
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -40,7 +40,7 @@ if [ "$(docker ps -aq -f name=ros2_webots)" ]; then
     fi
 fi
 
-echo "🚀 Creating new container..."
+echo "Creating new container..."
 echo ""
 
 docker run -it \
