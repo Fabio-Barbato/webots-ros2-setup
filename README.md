@@ -15,7 +15,7 @@ Complete setup guide for running Webots simulator on macOS with ROS2 in Docker, 
 
 This setup creates a bidirectional bridge between:
 - **Webots simulator** running natively on macOS
-- **ROS2 Humble** running in Docker (ARM64/ADM64)
+- **ROS2 Humble** running in Docker (ARM64/AMD64)
 
 Communication happens via JSON files in a shared folder, enabling:
 - Webots → ROS2: Sensor data published as ROS2 topics
