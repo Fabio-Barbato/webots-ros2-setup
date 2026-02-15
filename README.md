@@ -16,7 +16,7 @@ Complete setup guide for running Webots simulator on macOS with ROS2 in Docker, 
 
 This setup creates a bidirectional bridge between:
 - **Webots simulator** running natively on macOS
-- **ROS2 Humble** running in Docker (ARM64)
+- **ROS2 Humble** running in Docker (ARM64/ADM64)
 
 Communication happens via JSON files in a shared folder, enabling:
 - Webots → ROS2: Sensor data published as ROS2 topics
@@ -33,7 +33,6 @@ Communication happens via JSON files in a shared folder, enabling:
 - **Webots** R2023b+ ([Download](https://cyberbotics.com/))
 - **8GB RAM** minimum (16GB recommended)
 - **10GB free disk space**
-- Apple Silicon (M1/M2/M3) - Native ARM64
 
 ---
 
@@ -102,12 +101,12 @@ echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 cd ~/webots-ros2-setup
 ./start.sh
 ```
+Now you're inside the container!
 
 **2. Launch ROS2 nodes (3 terminals):**
 
-**Terminal 1 - Sensor Publisher:**
+**Terminal 1 (Already opened)- Sensor Publisher:**
 ```bash
-docker exec -it ros2_webots bash
 source ~/ros2_ws/install/setup.bash
 ros2 run webots_bridge sensor_publisher
 ```
@@ -115,6 +114,8 @@ ros2 run webots_bridge sensor_publisher
 **Terminal 2 - Your Algorithm (obstacle avoider example):**
 ```bash
 docker exec -it ros2_webots bash
+```
+```bash
 source ~/ros2_ws/install/setup.bash
 ros2 run webots_bridge obstacle_avoider
 ```
@@ -122,6 +123,8 @@ ros2 run webots_bridge obstacle_avoider
 **Terminal 3 - Command Subscriber:**
 ```bash
 docker exec -it ros2_webots bash
+```
+```bash
 source ~/ros2_ws/install/setup.bash
 ros2 run webots_bridge command_subscriber
 ```
@@ -134,9 +137,10 @@ open /Applications/Webots.app
 ```
 
 In Webots:
-1. Open: `~/Desktop/webots_robot_project/worlds/arena.wbt`
-2. Verify robot controller is set to `bridge_controller`
-3. Press **▶️ Play**
+1. Create a new world;
+2. Add a new robot E-puck;
+4. Set robot controller to `bridge_controller`
+5. Press **▶️ Play**
 
 **🎉 Your robot should now move and avoid obstacles!**
 
@@ -215,7 +219,7 @@ In Webots:
 
 ---
 
-## 🛠️ Available ROS2 Nodes
+## Available ROS2 Nodes
 
 ### sensor_publisher
 
@@ -265,3 +269,4 @@ ros2 run webots_bridge my_algorithm
 ---
 
 **Happy robot building! 🤖✨**
+For every problem during setting, write on fbarbato200@gmail.com
