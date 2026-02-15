@@ -29,8 +29,8 @@ class SensorPublisher(Node):
         # Shared file path
         self.shared_file = Path('/shared/sensor_data.json')
         
-        self.get_logger().info('🤖 Sensor Publisher started!')
-        self.get_logger().info(f'📁 Reading from: {self.shared_file}')
+        self.get_logger().info('Sensor Publisher started!')
+        self.get_logger().info(f'Reading from: {self.shared_file}')
         
         self.loop_count = 0
     
