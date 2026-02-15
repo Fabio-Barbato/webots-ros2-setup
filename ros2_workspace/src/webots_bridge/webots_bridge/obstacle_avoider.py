@@ -37,7 +37,7 @@ class ObstacleAvoider(Node):
         # Obstacle threshold (E-puck IR sensors: high value = obstacle)
         self.obstacle_threshold = 0.2  # meters
         
-        self.get_logger().info('🚧 Obstacle Avoider Started!')
+        self.get_logger().info('Obstacle Avoider Started!')
         self.get_logger().info(f'   Threshold: > {self.obstacle_threshold}m = obstacle')
         
         self.received_count = 0
@@ -51,7 +51,7 @@ class ObstacleAvoider(Node):
         if msg.range > self.obstacle_threshold:
             # Obstacle detected - turn!
             self.get_logger().info(
-                f'⚠️  OBSTACLE {msg.range:.3f}m - TURNING!'
+                f'OBSTACLE {msg.range:.3f}m - TURNING!'
             )
             cmd.linear.x = 0.0
             cmd.angular.z = 0.5  # Turn left
@@ -59,7 +59,7 @@ class ObstacleAvoider(Node):
             # Clear - go forward!
             if self.received_count % 20 == 0:
                 self.get_logger().info(
-                    f'✅ FORWARD {msg.range:.3f}m'
+                    f'FORWARD {msg.range:.3f}m'
                 )
             cmd.linear.x = 0.2
             cmd.angular.z = 0.0
