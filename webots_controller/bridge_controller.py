@@ -21,22 +21,22 @@ SHARED_DIR.mkdir(exist_ok=True)
 SENSOR_FILE = SHARED_DIR / "sensor_data.json"
 CMD_FILE = SHARED_DIR / "cmd_vel.json"
 
-print(f"📁 Shared directory: {SHARED_DIR}")
-print(f"📄 Sensor file: {SENSOR_FILE}")
-print(f"🎮 Command file: {CMD_FILE}")
+print(f"Shared directory: {SHARED_DIR}")
+print(f"Sensor file: {SENSOR_FILE}")
+print(f"Command file: {CMD_FILE}")
 
 # Initialize motors
 left_motor = robot.getDevice('left wheel motor')
 right_motor = robot.getDevice('right wheel motor')
 
 if left_motor is None or right_motor is None:
-    print("❌ ERROR: Motors not found!")
+    print("ERROR: Motors not found!")
 else:
     left_motor.setPosition(float('inf'))
     right_motor.setPosition(float('inf'))
     left_motor.setVelocity(0.0)
     right_motor.setVelocity(0.0)
-    print("✅ Motors initialized")
+    print("Motors initialized")
 
 # Initialize proximity sensors
 sensors = []
@@ -46,8 +46,8 @@ for i in range(8):
         sensor.enable(timestep)
         sensors.append(sensor)
 
-print(f"✅ Initialized {len(sensors)} sensors")
-print("🤖 Webots Controller Started!")
+print(f"Initialized {len(sensors)} sensors")
+print("Webots Controller Started!")
 
 # Main control loop
 loop_count = 0
@@ -72,10 +72,10 @@ while robot.step(timestep) != -1:
             right_motor.setVelocity(right_velocity * 6.28)
             
             if loop_count % 10 == 0:
-                print(f"🎮 CMD: linear={linear:.2f}, angular={angular:.2f}")
+                print(f"CMD: linear={linear:.2f}, angular={angular:.2f}")
         except Exception as e:
             if loop_count % 100 == 0:
-                print(f"⚠️  Error reading command: {e}")
+                print(f"Error reading command: {e}")
     
     # WRITE SENSOR DATA FOR ROS2
     if len(sensors) > 0:
@@ -96,8 +96,8 @@ while robot.step(timestep) != -1:
                 f.flush()
             
             if loop_count % 50 == 0:
-                print(f"📊 Wrote {len(json_str)} bytes, min={data['min_distance']:.1f}")
+                print(f"Wrote {len(json_str)} bytes, min={data['min_distance']:.1f}")
                 
         except Exception as e:
             if loop_count % 100 == 0:
-                print(f"⚠️  Error writing sensors: {e}")
+                print(f"Error writing sensors: {e}")
