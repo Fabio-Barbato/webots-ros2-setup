@@ -6,7 +6,7 @@ Complete setup guide for running Webots simulator on macOS with ROS2 in Docker, 
 
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
-- [Quick Setup](#quick-setup)
+- [Setup](#setup)
 - [System Architecture](#system-architecture)
 - [Usage](#usage)
 
