@@ -27,8 +27,8 @@ class CommandSubscriber(Node):
         # Shared file path
         self.shared_file = Path('/shared/cmd_vel.json')
         
-        self.get_logger().info('🎮 Command Subscriber started!')
-        self.get_logger().info(f'📁 Writing to: {self.shared_file}')
+        self.get_logger().info('Command Subscriber started!')
+        self.get_logger().info(f'Writing to: {self.shared_file}')
     
     def cmd_callback(self, msg):
         try:
@@ -41,7 +41,7 @@ class CommandSubscriber(Node):
                 json.dump(data, f)
             
             self.get_logger().info(
-                f'📤 CMD: linear={data["linear"]:+.2f}, angular={data["angular"]:+.2f}'
+                f'CMD: linear={data["linear"]:+.2f}, angular={data["angular"]:+.2f}'
             )
             
         except Exception as e:
