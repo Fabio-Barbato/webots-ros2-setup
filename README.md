@@ -268,4 +268,4 @@ ros2 run webots_bridge my_algorithm
 ---
 
 **Happy robot building! 🤖✨**
-For every problem during setting, write on fbarbato200@gmail.com
+For every problem during setting, feel free to contact me on fbarbato200@gmail.com
