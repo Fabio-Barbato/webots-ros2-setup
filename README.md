@@ -68,6 +68,7 @@ This creates:
 - `~/Desktop/webots_robot_project/` - Webots project
 - Docker container with ROS2 workspace
 
+NOTE: Make sure in [bridge_controller.py](./webots_controller/bridge_controller.py) the PATH of shared folder is correct. The default one is $HOME/webots_ros2_bridge;
 ### Step 4: Start Container
 
 ```bash
@@ -136,12 +137,17 @@ open /Applications/Webots.app
 ```
 
 In Webots:
-1. Create a new world;
-2. Add a new robot E-puck;
-4. Set robot controller to `bridge_controller`
+1. File -> New -> New Project Directory -> Select "webots_robot_project" on your Desktop;
+2. From the Scene Tree: Add element -> PROTO nodes (Webots projects) -> robots -> gctronic -> E-PUCK;
+4. Click on the added robot on the scene and set robot controller to `bridge_controller` from its properties;
 5. Press **▶️ Play**
 
 **🎉 Your robot should now move and avoid obstacles!**
+
+NOTE: if you have error on retrieve python path:
+1. On your terminal
+   ```which python```
+2. Copy the path and put it in the first line of [bridge_controller.py](./webots_controller/bridge_controller.py) script, replacing 
 
 ---
 
