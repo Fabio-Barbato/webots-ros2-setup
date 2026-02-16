@@ -132,7 +132,8 @@ open /Applications/Webots.app
 
 In Webots:
 1. File -> New -> New Project Directory -> Select "webots_robot_project" on your Desktop;
-2. From the Scene Tree: Add element -> PROTO nodes (Webots projects) -> robots -> gctronic -> E-PUCK;
+2. Check the box "Add rectangle arena" and choose a name for the new world;
+3. From the Scene Tree: Add element -> PROTO nodes (Webots projects) -> robots -> gctronic -> E-PUCK;
 4. Click on the added robot on the scene and set robot controller to `bridge_controller` from its properties;
 5. Press **▶️ Play**
 
