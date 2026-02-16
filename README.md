@@ -50,6 +50,7 @@ cd webots-ros2-setup
 
 ```bash
 cd docker
+chmod +x ./build.sh
 ./build.sh
 ```
 
@@ -61,6 +62,7 @@ This will:
 
 ```bash
 cd ..
+chmod +x ./setup.sh
 ./setup.sh
 ```
 
@@ -72,6 +74,7 @@ This creates:
 ### Step 4: Start Container
 
 ```bash
+chmod +x ./start.sh
 ./start.sh
 ```
 
