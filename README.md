@@ -97,16 +97,7 @@ echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 
 ### Starting the System
 
-**1. Start Docker container:**
-
-```bash
-# On Mac
-cd ~/webots-ros2-setup
-./start.sh
-```
-Now you're inside the container!
-
-**2. Launch ROS2 nodes (3 terminals):**
+**1. Launch ROS2 nodes (3 terminals):**
 
 **Terminal 1 (Already opened)- Sensor Publisher:**
 ```bash
@@ -132,7 +123,7 @@ source ~/ros2_ws/install/setup.bash
 ros2 run webots_bridge command_subscriber
 ```
 
-**3. Launch Webots:**
+**2. Launch Webots:**
 
 ```bash
 # On Mac
@@ -273,6 +264,17 @@ ros2 run webots_bridge my_algorithm
 For every problem during setting, feel free to contact me on fbarbato200@gmail.com
 If this setup helped you, leave a ⭐️!
 ---
+
+## Useful commands
+- Start the container:
+```docker start ros2_webots```
+- Attach to started container:
+```docker exec -it ros2_webots bash```
+- Apply edits every time you edit scripts inside the container:
+```bash
+cd ~/ros2_ws
+source install/setup.sh
+```
 
 ## Troubleshooting
 
