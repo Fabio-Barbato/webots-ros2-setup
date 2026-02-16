@@ -8,6 +8,7 @@ Complete setup guide for running Webots simulator on macOS with ROS2 in Docker, 
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -68,7 +69,6 @@ This creates:
 - `~/Desktop/webots_robot_project/` - Webots project
 - Docker container with ROS2 workspace
 
-NOTE: Make sure in [bridge_controller.py](./webots_controller/bridge_controller.py) the PATH of shared folder is correct. The default one is $HOME/webots_ros2_bridge;
 ### Step 4: Start Container
 
 ```bash
@@ -143,12 +143,6 @@ In Webots:
 5. Press **▶️ Play**
 
 **🎉 Your robot should now move and avoid obstacles!**
-
-NOTE: if you have error on retrieve python path:
-1. On your terminal
-   ```which python```
-2. Copy the path and put it in the first line of [bridge_controller.py](./webots_controller/bridge_controller.py) script, replacing 
-
 ---
 
 ## 📊 System Architecture
@@ -271,7 +265,22 @@ source install/setup.bash
 ros2 run webots_bridge my_algorithm
 ```
 
----
 
 **Happy robot building! 🤖✨**
 For every problem during setting, feel free to contact me on fbarbato200@gmail.com
+If this setup helped you, leave a ⭐️!
+---
+
+## Troubleshooting
+
+### Invalid shared PATH
+Make sure in [bridge_controller.py](./webots_controller/bridge_controller.py) the PATH of shared folder is correct. The default one is $HOME/webots_ros2_bridge;
+
+### Invalid python path
+If you have error on retrieve python path:
+1. On your terminal
+   ```which python```
+2. Copy the path and put it in the first line of [bridge_controller.py](./webots_controller/bridge_controller.py) script, replacing ```/usr/bin/env python3``` (leave ```#!```);
+
+---
+
