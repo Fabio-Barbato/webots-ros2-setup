@@ -258,12 +258,9 @@ source install/setup.bash
 # Run
 ros2 run webots_bridge my_algorithm
 ```
-
-
-**Happy robot building! 🤖✨**
-For every problem during setting, feel free to contact me on fbarbato200@gmail.com
-If this setup helped you, leave a ⭐️!
----
+Happy robot building 🤖✨  
+If you have problem during setup, feel free to contact me on fbarbato200@gmail.com  
+If this guide helped you, leave a ⭐️ on this repo!
 
 ## Useful commands
 - Start the container:
