@@ -27,4 +27,4 @@ USERNAME=$(whoami)
 sed -i.bak "s|Path.home()|Path(\"/Users/$USERNAME/webots_ros2_bridge\")|g" \
     "$WEBOTS_DIR/controllers/bridge_controller/bridge_controller.py"
 
-echo "Webots setup complete!"
+echo "Webots setup complete! "
