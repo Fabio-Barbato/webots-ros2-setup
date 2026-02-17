@@ -51,5 +51,4 @@ docker run -it \
     --name ros2_webots \
     ros2_humble_webots
 
-echo ""
 echo "Container stopped."
