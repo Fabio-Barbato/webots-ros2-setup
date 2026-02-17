@@ -271,6 +271,7 @@ If this guide helped you, leave a ⭐️ on this repo!
 - Apply edits every time you edit scripts inside the container:
 ```bash
 cd ~/ros2_ws
+colcon build
 source install/setup.sh
 ```
 
