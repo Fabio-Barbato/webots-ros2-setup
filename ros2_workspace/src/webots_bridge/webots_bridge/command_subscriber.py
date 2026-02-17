@@ -11,7 +11,6 @@ from geometry_msgs.msg import Twist
 import json
 from pathlib import Path
 
-
 class CommandSubscriber(Node):
     def __init__(self):
         super().__init__('command_subscriber')
