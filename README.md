@@ -1,6 +1,7 @@
 # 🤖 Webots + ROS2 Bridge Setup (macOS)
 
 Complete setup guide for running Webots simulator on macOS with ROS2 in Docker, connected via a file-based bridge.
+NOTE: this guide has been designed for macOS users but if you have a different OS, you just need to change docker's image of ros2-humble for your architecture.
 
 ## Table of Contents
 
